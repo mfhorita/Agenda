@@ -26,7 +26,7 @@ SECRET_KEY = 'jpk4q*v63uha26l8b#d*ds8yt6!2g_fcqy(cd(*9)wmp#@vb8@'
 DEBUG = True
 # DEBUG = False             # Produção
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".herokuapp.com"]
 # ALLOWED_HOSTS = ['*']     # Produção
 
 
