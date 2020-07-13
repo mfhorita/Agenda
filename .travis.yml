@@ -16,8 +16,6 @@ jobs:
         script: /bin/true
         deploy:
             provider: heroku
-            api_key: 
-                secure: fb227e24-1f60-4597-9f6f-2556e619e341
             app: mfhorita
             on: master
             run: "python manage.py migrate"
