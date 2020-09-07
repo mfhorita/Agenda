@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-#    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 #    'csp.middleware.CSPMiddleware',
 ]
 
@@ -59,6 +59,7 @@ MIDDLEWARE = [
 # CSP_IMG_SRC = ("'none'", )
 # CSP_FONT_SRC = ("'none'", )
 
+X_FRAME_OPTIONS = ‘ALLOW-FROM https://datazeus.com.br/' 
 ROOT_URLCONF = 'agenda.urls'
 
 TEMPLATES = [
