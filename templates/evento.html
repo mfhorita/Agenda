@@ -4,7 +4,7 @@
 
 <h2>Evento</h2>
 
-<form action="submit" method="POST">
+<form action="submit" method="POST">{% csrf_token %}
     <label>Título</label>
     <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
     <br>
