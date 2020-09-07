@@ -59,7 +59,7 @@ MIDDLEWARE = [
 # CSP_IMG_SRC = ("'none'", )
 # CSP_FONT_SRC = ("'none'", )
 
-X_FRAME_OPTIONS = 'ALLOW-FROM https://datazeus.com.br/' 
+X_FRAME_OPTIONS = 'ALLOW-FROM https://mfhorita.herokuapp.com/' 
 ROOT_URLCONF = 'agenda.urls'
 
 TEMPLATES = [
