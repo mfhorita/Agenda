@@ -53,11 +53,11 @@ MIDDLEWARE = [
     'csp.middleware.CSPMiddleware',
 ]
 
-CSP_DEFAULT_SRC = (“‘none’”, )
-CSP_STYLE_SRC = (“‘none’”, )
-CSP_SCRIPT_SRC = (“‘none’”, )
-CSP_IMG_SRC = (“‘none’”, )
-CSP_FONT_SRC = (“‘none’”, )
+CSP_DEFAULT_SRC = ("'none'", )
+CSP_STYLE_SRC = ("'none'", )
+CSP_SCRIPT_SRC = ("'none'", )
+CSP_IMG_SRC = ("'none'", )
+CSP_FONT_SRC = ("'none'", )
 
 ROOT_URLCONF = 'agenda.urls'
 
