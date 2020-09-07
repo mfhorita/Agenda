@@ -23,11 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jpk4q*v63uha26l8b#d*ds8yt6!2g_fcqy(cd(*9)wmp#@vb8@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False             # Produção
+DEBUG = True
+# DEBUG = False             # Produção
 
-ALLOWED_HOSTS = [".herokuapp.com"]
-# ALLOWED_HOSTS = ['*']     # Produção
+# ALLOWED_HOSTS = [".herokuapp.com"]
+ALLOWED_HOSTS = ['*']     # Produção
 
 
 # Application definition
