@@ -26,8 +26,8 @@ SECRET_KEY = 'jpk4q*v63uha26l8b#d*ds8yt6!2g_fcqy(cd(*9)wmp#@vb8@'
 DEBUG = True
 # DEBUG = False             # Produção
 
-# ALLOWED_HOSTS = [".herokuapp.com"]
-ALLOWED_HOSTS = ['*']     # Produção
+ALLOWED_HOSTS = [".herokuapp.com"]
+# ALLOWED_HOSTS = ['*']     # Produção
 
 # Application definition
 INSTALLED_APPS = [
@@ -44,20 +44,19 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-#    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-#    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#    'csp.middleware.CSPMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
-# CSP_DEFAULT_SRC = ("'none'", )
-# CSP_STYLE_SRC = ("'none'", )
-# CSP_SCRIPT_SRC = ("'none'", )
-# CSP_IMG_SRC = ("'none'", )
-# CSP_FONT_SRC = ("'none'", )
+CSP_DEFAULT_SRC = ("'none'", )
+CSP_STYLE_SRC = ("'none'", )
+CSP_SCRIPT_SRC = ("'none'", )
+CSP_IMG_SRC = ("'none'", )
+CSP_FONT_SRC = ("'none'", )
 
-# X_FRAME_OPTIONS = 'ALLOW-FROM *'
 ROOT_URLCONF = 'agenda.urls'
 
 TEMPLATES = [
