@@ -102,6 +102,6 @@ def delete_evento(request, id_evento):
 
 # @login_required(login_url='/login/')
 def json_lista_evento(request, id_usuario):
-    usuario = User.objects.get(id=id_usuario)
+    usuario = get(id=id_usuario)
     evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
     return JsonResponse(list(evento), safe=False)
