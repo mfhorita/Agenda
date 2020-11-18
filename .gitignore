@@ -2,5 +2,5 @@
 *.pyc
 *.sqlite3
 *.png
-requirements.txt
+*.txt
 __pycache__
