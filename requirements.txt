@@ -7,6 +7,7 @@ backcall==0.2.0
 certifi==2020.12.5
 chardet==3.0.4
 colorama==0.4.4
+csp==0.1a10
 decorator==4.4.2
 dj-database-url==0.5.0
 Django==3.1.4
