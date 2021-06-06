@@ -1,4 +1,5 @@
 /venv
+/obj
 *.pyc
 *.sqlite3
 *.png
