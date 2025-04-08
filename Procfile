@@ -1,1 +1,0 @@
-web: gunicorn agenda.wsgi -- max-requests 1200
