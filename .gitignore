@@ -1,0 +1,6 @@
+/venv
+/obj
+*.pyc
+*.sqlite3
+*.png
+__pycache__
