@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http.response import Http404, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from datetime import datetime as dt
 from django.contrib import messages
 from app.models import Evento
@@ -44,11 +44,11 @@ def lista_eventos(request):
 @login_required(login_url='/login/')
 def evento(request):
     id_evento = request.GET.get('id')
-    
+
     dados = {}
     if id_evento:
-        dados['evento'] = Evento.objects.get(id=id_evento)
-    
+        dados['evento'] = get_object_or_404(Evento, id=id_evento, usuario=request.user)
+
     return render(request, 'evento.html', dados)
 
 
@@ -62,13 +62,11 @@ def submit_evento(request):
 
         id_evento = request.POST.get('id_evento')
         if id_evento:
-            evento = Evento.objects.get(id=id_evento)
-
-            if evento.usuario == usuario:
-                evento.titulo = titulo
-                evento.data_evento = data_evento
-                evento.descricao = descricao
-                evento.save()
+            evento = get_object_or_404(Evento, id=id_evento, usuario=usuario)
+            evento.titulo = titulo
+            evento.data_evento = data_evento
+            evento.descricao = descricao
+            evento.save()
                 
             # Evento.objects.filter(id=id_evento).update(
             #     titulo=titulo, data_evento=data_evento, descricao=descricao)
@@ -80,22 +78,16 @@ def submit_evento(request):
 
 @login_required(login_url='/login/')
 def delete_evento(request, id_evento):
-    usuario = request.user
-    try:
-        evento = Evento.objects.get(id=id_evento)
-    except Exception:
-        raise Http404()
-        
-    if usuario == evento.usuario:
-        evento.delete()
-    else:
-        raise Http404()
-    
+    evento = get_object_or_404(Evento, id=id_evento, usuario=request.user)
+    evento.delete()
+
     return redirect('/')
 
 
-# @login_required(login_url='/login/')
+@login_required(login_url='/login/')
 def json_lista_evento(request, id_usuario):
-    usuario = Evento.objects.get(id=id_usuario).values('')
-    evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
+    if request.user.id != id_usuario:
+        raise Http404()
+
+    evento = Evento.objects.filter(usuario=request.user).values('id', 'titulo')
     return JsonResponse(list(evento), safe=False)
