@@ -23,7 +23,7 @@ pyparsing==3.2.3
 pytest==9.0.3
 pytz==2024.2
 redis==5.2.1
-requests==2.32.3
+requests==2.33.0
 six==1.17.0
 sqlparse==0.5.4
 typing-extensions==4.13.2
